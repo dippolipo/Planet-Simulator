@@ -5,7 +5,7 @@
 #include "Generic.hpp"
 #include "Particle.hpp"
 
-struct Model {//TODO
+struct Model {
 	std::string title = "";
 	std::vector<Particle> particles;
 };
@@ -20,4 +20,5 @@ void printModels();
 int setPrecision();
 int setFrequencyOfPrinting();
 void loadModels(std::fstream &file);
+void saveModel();
 int chooseModel();

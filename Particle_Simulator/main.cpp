@@ -12,12 +12,10 @@ int main() {
     const double G = 6.67e-11;// Constante di della gravitazione universale
 
     std::fstream file("Models.txt");
-
     loadModels(file);
+    file.close();
 
     std::vector<Particle> particles = models[chooseModel()].particles;
-
-    file.close();
 
     int n = particles.size();
 
