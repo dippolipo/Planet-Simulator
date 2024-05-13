@@ -14,7 +14,7 @@ int setPrecision() {
     while (true) {
         std::cout << "Precisione del tempo (s): ";
         std::getline(std::cin, answer);
-        
+        std::cout << "input: " << isIntNumber(answer) << std::endl; //DEBUG
         if (isIntNumber(answer)) {
             dTime = stoi(answer);
             if (dTime > 0) {
@@ -105,6 +105,22 @@ int setFrequencyOfPrinting() {
     }
 }
 
+void saveModel() {
+    std::fstream file("Models.txt", std::ios::app);
+
+    std::string answer;
+    std::cout << "Aggiungere titolo: ";
+    std::getline(std::cin, answer);
+    
+    int lastModel = models.size() - 1;
+    file << "\n\n¶" << answer;
+    for (int i = 0; i < models[lastModel].particles.size(); i++) {
+        answer = models[lastModel].particles[i].name + "¶" + std::to_string(models[lastModel].particles[i].pos.x) + "¶" + std::to_string(models[lastModel].particles[i].pos.y) + "¶" + std::to_string(models[lastModel].particles[i].mass) + "¶" + std::to_string(models[lastModel].particles[i].radius) + "¶" + std::to_string(models[lastModel].particles[i].v.x) + "¶" + std::to_string(models[lastModel].particles[i].v.y) + "¶";
+        file << std::endl << answer;
+    }
+    file.close();
+}
+
 void loadModels(std::fstream& file) {
     
     int dataSubject; // riferisce a quale dato della classe Particle si sta inserendo l'input
@@ -184,6 +200,11 @@ int chooseModel() {
                 answer = stringToLower(answer);
 
                 if (answer == "fasking") {
+                    std::cout << "Do you want to save the file? [ Y / N ] ";
+                    std::getline(std::cin, answer);
+                    if (stringToLower(answer) == "y") {
+                        saveModel();
+                    }
                     break;
                 }
                 else {

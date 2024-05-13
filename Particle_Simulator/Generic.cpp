@@ -22,7 +22,7 @@ bool isIntNumber(std::string str) {
 
     }
 
-    return true;
+    return (str == "") ? false : true;
 }
 
 bool isDecimalNumber(std::string str) {
@@ -50,7 +50,7 @@ bool isDecimalNumber(std::string str) {
 
     }
 
-    return true;
+    return (str == "") ? false : true;
 }
 
 bool isScientificNumber(std::string str) {
