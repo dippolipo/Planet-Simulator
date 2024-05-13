@@ -14,7 +14,7 @@ int setPrecision() {
     while (true) {
         std::cout << "Precisione del tempo (s): ";
         std::getline(std::cin, answer);
-        std::cout << "input: " << isIntNumber(answer) << std::endl; //DEBUG
+
         if (isIntNumber(answer)) {
             dTime = stoi(answer);
             if (dTime > 0) {
