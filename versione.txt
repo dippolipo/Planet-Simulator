@@ -1,0 +1,2 @@
+- aggiunto un sistema di salvataggio dati sul file da cui vengono caricati
+- aggiunto un sistema di sovrascrittura dei dati sul file di salvataggio

@@ -1,0 +1,4 @@
+
+¶Terra - Sole, velocita' iniziale = 0
+Sole¶0¶149e9¶1.989e30¶696340e3¶0¶0¶
+Terra¶0¶0¶5.972e24¶6371e3¶0¶0¶
